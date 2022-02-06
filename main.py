@@ -77,6 +77,8 @@ class Application(ShowBase):
 
     def update(self, task):
         self.s= self.s+1
+        if self.s > 320: 
+            self.s = 0
         for i in range (999):
             self.nodes[i].setPos( 0.002*i*sin((2*i+self.s)/25), 0.002*i*sin((i+self.s)/25),0.01*sin(0.1*self.s)+2.1*i+2)
             self.nodes[i].setHpr(360*sin((i+self.s)/100),0,0)
